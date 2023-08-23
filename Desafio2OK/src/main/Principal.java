@@ -17,8 +17,11 @@ public class Principal {
 		Alumno [] Alumnos = new Alumno [2];
 		Scanner scanner = new Scanner(System.in);
 		int contadorAlumnos = 0;
+		int notaMasBaja = 0;
+		int notaMasAlta = 10;
 		int opcion;
-		do {
+	
+			do {
 			System.out.println(" -- Ingrese una opcion -- ");
 			System.out.println("1- Alumno ");
 			System.out.println("2- Apellido: ");
@@ -28,7 +31,8 @@ public class Principal {
 			opcion = scanner.nextInt();
 			//double Nota = scanner.nextDouble(); borrar en caso que este bien --------
 			
-			switch (opcion) {
+			
+				switch (opcion) {
 					case 1:{
 						if (contadorAlumnos<Alumnos.length) {
 							System.out.println("Ingrese el nombre del Alumno: ");
@@ -38,22 +42,32 @@ public class Principal {
 							System.out.println("Ingrese el número del examen: ");
 							int NumeroExamen = scanner.nextInt();
 							System.out.println("Ingrese la nota: ");
-							double Nota = scanner.nextDouble();
+							int Nota = scanner.nextInt();
 							//System.out.println("LA nota mas alta es: "); borrar en caso que este bien --------
-							
 							Alumnos [contadorAlumnos] = new Alumno ( nombre, Apellido, NumeroExamen, Nota);
 							contadorAlumnos++;
 						    
 						}else {
 							System.out.println("No se pueden agregar alumnos");
-						}
-						break;
+						} 
+								
+	   break;
 						
 					}			
+					
 			}
 		
-		} while (opcion!=5);
-		
+				} while (opcion!=5);
+							
+							for (int i=0; i < notaMasBaja ; i++ ) {
+						    System.out.println("la nota mas baja fue:" + (notaMasBaja) );
+						     notaMasBaja = scanner.nextInt();
+					     if (i==0) {
+						    	 notaMasBaja = notaMasAlta;
+						     } else if (notaMasAlta < notaMasBaja) {
+						    	 notaMasBaja=notaMasAlta;
+						     }
+					}	System.out.println("La nota mas alta es: " + notaMasAlta);
 	}
 
 }

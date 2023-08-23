@@ -13,9 +13,9 @@ public class Alumno {
 	public String Nombre;
 	public String Apellido;
 	public int NumeroExamen;
-	public Double Nota;
+	public int Nota;
 	
-	public Alumno(String Nombre, String Apellido, int NumeroExamen, Double nota) {
+	public Alumno(String Nombre, String Apellido, int NumeroExamen, int nota) {
 		super();
 		this.Nombre = Nombre;
 		this.Apellido = Apellido;
